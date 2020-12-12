@@ -1,0 +1,15 @@
+<mat-form-field>
+  <mat-label> {{ label }} <span *ngIf="isRequired">*</span> </mat-label>
+  <input
+    matInput
+    id="{{ elementId }}"
+    [formControl]="control"
+    autocomplete="off"
+  />
+  <mat-error *ngIf="control.invalid && (control.dirty || control.touched)">
+    <app-validation-message
+      [control]="control"
+      [label]="label"
+    ></app-validation-message>
+  </mat-error>
+</mat-form-field>
