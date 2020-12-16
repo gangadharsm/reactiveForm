@@ -9,7 +9,8 @@ export class ValidationService {
 
   static getValidationMessgae(validatorName: string, validatorValue?: any, label?: string) {
     const config = {
-      required: `${label} is required`
+      required: `${label} is required`,
+      minlength: `Minimum length ${validatorValue.requiredLength}`
     };
     return config[validatorName]
   }

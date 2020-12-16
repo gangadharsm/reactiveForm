@@ -1,10 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-input-control',
   templateUrl: './input-control.component.html',
-  styleUrls: ['./input-control.component.scss']
+  styleUrls: ['./input-control.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InputControlComponent implements OnInit {
 

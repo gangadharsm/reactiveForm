@@ -5,7 +5,7 @@ import { ValidationService } from 'src/app/core/services';
 @Component({
   selector: 'app-validation-message',
   templateUrl: './validation-message.component.html',
-  styleUrls: ['./validation-message.component.scss']
+  styleUrls: ['./validation-message.component.scss'],
 })
 export class ValidationMessageComponent implements OnInit {
 
@@ -18,7 +18,9 @@ export class ValidationMessageComponent implements OnInit {
 
   get validationMessage() {
     for (let propertyName in this.control.errors) {
-      return ValidationService.getValidationMessgae(propertyName, this.control.errors[propertyName], this.label);
+      if (this.control.errors.hasOwnProperty(propertyName) && this.control.touched) {
+        return ValidationService.getValidationMessgae(propertyName, this.control.errors[propertyName], this.label);
+      }
     }
     return null
   }

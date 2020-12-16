@@ -1,9 +1,22 @@
 <p>student works!</p>
 <form [formGroup]="studentForm">
-  <app-input-control
-    [control]="studentForm.get('firstName')"
-    [elementId]="'firstName'"
-    [label]="'First Name'"
-    [isRequired]="true"
-  ></app-input-control>
+  <div class="row g-3">
+    <div class="col">
+      <app-input-control
+        [control]="studentForm.get('firstName')"
+        [elementId]="'firstName'"
+        [label]="'First Name'"
+        [isRequired]="true"
+      ></app-input-control>
+    </div>
+
+    <div class="col">
+      <app-input-control
+        [control]="studentForm.get('lastName')"
+        [elementId]="'lastName'"
+        [label]="'Last Name'"
+        [isRequired]="true"
+      ></app-input-control>
+    </div>
+  </div>
 </form>

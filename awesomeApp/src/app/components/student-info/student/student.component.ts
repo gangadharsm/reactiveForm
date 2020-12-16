@@ -19,7 +19,8 @@ export class StudentComponent implements OnInit {
 
   createStudentForm() {
     this.studentForm = this.fb.group({
-      firstName: ["", [Validators.required]]
+      firstName: ["", [Validators.required, Validators.minLength(10)]],
+      lastName: ["", [Validators.required]],
     })
   }
 }
