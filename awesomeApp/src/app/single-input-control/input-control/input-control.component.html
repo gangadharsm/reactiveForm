@@ -5,6 +5,7 @@
     id="{{ elementId }}"
     [formControl]="control"
     autocomplete="off"
+    appTrimFormFields
   />
   <mat-error *ngIf="control.invalid && (control.dirty || control.touched)">
     <app-validation-message
